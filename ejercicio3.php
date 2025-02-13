@@ -35,31 +35,18 @@
 </head>
 
 <body>
-    <div class="container-fluid text-center bg-dark p-3 text-white">
+<div class="container-fluid bg-dark p-3 text-white">
         <div class="row">
-            <div class="col-12">
+        <div class="col-2">
+                <a href="menu.html" class="btn btn-secondary btn-lg btn-block">Menu</a>
+            </div>
+            <div class="col-10">
                 <h1>Ejercicios php</h1>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 p-0 bg-dark">
-                <div class="container-fluid border border-dark">
-                    <div class="row">
-                        <div class="col-12 p-0">
-                            <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 1</button>
-                        </div>
-                        <div class="col-12 p-0">
-                            <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 2</button>
-                        </div>
-                        <div class="col-12 p-0">
-                            <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 3</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
             <div class="col-10 mt-2">
                 <div class="container-fluid pr-5"> <!--exercise-->
                     <div class="row">

@@ -24,16 +24,16 @@
         $valorInputNum1 = htmlspecialchars($_POST['num1']);
         $valorInputNum2 = htmlspecialchars($_POST['num2']);
         $valorInputNum3 = htmlspecialchars($_POST['num3']);
-        
+
         if ($valorInputNum1 < $valorInputNum2 && $valorInputNum1 < $valorInputNum3) {
-            echo "El numero: ".$valorInputNum1." es menor";
+            echo "El numero: " . $valorInputNum1 . " es menor";
             exit;
-        }elseif($valorInputNum2<$valorInputNum1 && $valorInputNum2 < $valorInputNum3) {
-            echo "El numero: ".$valorInputNum2." es menor";
+        } elseif ($valorInputNum2 < $valorInputNum1 && $valorInputNum2 < $valorInputNum3) {
+            echo "El numero: " . $valorInputNum2 . " es menor";
             exit;
 
-        }else{
-            echo "El numero: ".$valorInputNum3." es menor";
+        } else {
+            echo "El numero: " . $valorInputNum3 . " es menor";
             exit;
 
         }
@@ -43,31 +43,18 @@
 </head>
 
 <body>
-    <div class="container-fluid text-center bg-dark p-3 text-white">
+    <div class="container-fluid bg-dark p-3 text-white">
         <div class="row">
-            <div class="col-12">
+            <div class="col-2">
+                <a href="menu.html" class="btn btn-secondary btn-lg btn-block">Menu</a>
+            </div>
+            <div class="col-10">
                 <h1>Ejercicios php</h1>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 p-0 bg-dark">
-                <div class="container-fluid border border-dark">
-                    <div class="row">
-                        <div class="col-12 p-0">
-                            <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 1</button>
-                        </div>
-                        <div class="col-12 p-0">
-                            <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 2</button>
-                        </div>
-                        <div class="col-12 p-0">
-                            <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 3</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
             <div class="col-10 mt-2">
                 <div class="container-fluid pr-5"> <!--exercise-->
                     <div class="row">

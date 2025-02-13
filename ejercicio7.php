@@ -25,15 +25,15 @@
         $mayorN = 0;
         $numList = array();
 
-        for ($x = 0; $x<$valorInput1; $x++) {
+        for ($x = 0; $x < $valorInput1; $x++) {
             $numList[] = rand(1, 100);
-            echo $numList[$x]."<br>";
+            echo $numList[$x] . "<br>";
             if ($mayorN < $numList[$x]) {
                 $mayorN = $numList[$x];
             }
         }
 
-        echo "El numero mayor de la lista es: " .$mayorN;
+        echo "El numero mayor de la lista es: " . $mayorN;
         exit;
 
     }
@@ -41,63 +41,49 @@
 </head>
 
 <body>
-    <div class="container-fluid text-center bg-dark p-3 text-white">
+    <div class="container-fluid bg-dark p-3 text-white">
         <div class="row">
-            <div class="col-12">
+            <div class="col-2">
+                <a href="menu.html" class="btn btn-secondary btn-lg btn-block">Menu</a>
+            </div>
+            <div class="col-10">
                 <h1>Ejercicios php</h1>
             </div>
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-2 p-0 bg-dark">
-                <div class="container-fluid border border-dark">
-                    <div class="row">
-                        <div class="col-12 p-0">
-                            <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 1</button>
-                        </div>
-                        <div class="col-12 p-0">
-                            <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 2</button>
-                        </div>
-                        <div class="col-12 p-0">
-                            <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 3</button>
-                        </div>
+        <div class="col-10 mt-2">
+            <div class="container-fluid pr-5"> <!--exercise-->
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <div class="p">Ejercicio 7: Dado un arreglo de numeros enteros, identifique y retorne el
+                            mayor de ellos</div>
                     </div>
                 </div>
-
-            </div>
-            <div class="col-10 mt-2">
-                <div class="container-fluid pr-5"> <!--exercise-->
-                    <div class="row">
-                        <div class="col-12 p-0">
-                            <div class="p">Ejercicio 7: Dado un arreglo de numeros enteros, identifique y retorne el
-                                mayor de ellos</div>
-                        </div>
-                    </div>
-                    <div class="row mt-4 pr-5">
-                        <div class="col-8">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Tamaño del arreglo</span>
-                                </div>
-                                <input id="num" type="number" class="form-control" aria-label="Username"
-                                    aria-describedby="basic-addon1">
+                <div class="row mt-4 pr-5">
+                    <div class="col-8">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Tamaño del arreglo</span>
                             </div>
-                        </div>
-                        <div class="col-4">
-                            <button id="ajaxButton" class="btn btn-primary btn-md btn-block" data-toggle="modal"
-                                data-target="#">Calcular</button>
+                            <input id="num" type="number" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
                         </div>
                     </div>
-                    <div class="row mt-4 pr-5 justify-content-center">
-                        <div class="col-12">
-                            <!-- Área para mostrar el resultado -->
-                            <div id="result" class="mt-3"></div>
-                        </div>
+                    <div class="col-4">
+                        <button id="ajaxButton" class="btn btn-primary btn-md btn-block" data-toggle="modal"
+                            data-target="#">Calcular</button>
+                    </div>
+                </div>
+                <div class="row mt-4 pr-5 justify-content-center">
+                    <div class="col-12">
+                        <!-- Área para mostrar el resultado -->
+                        <div id="result" class="mt-3"></div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!--modals-->
