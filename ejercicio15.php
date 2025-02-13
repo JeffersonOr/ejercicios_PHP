@@ -19,29 +19,23 @@
 
     <?php
     // Comprobamos si la solicitud AJAX ha llegado
-    if (isset($_POST['name']) && isset($_POST['num1']) && isset($_POST['num2']) && isset($_POST['num3']) && isset($_POST['num4']) && isset($_POST['num5'])) {
+    if (isset($_POST['num1']) && isset($_POST['num2']) && isset($_POST['num3'])) {
         // Capturamos el valor del input y lo procesamos
-        $valorInputName = htmlspecialchars($_POST['name']);
         $valorInputNum1 = htmlspecialchars($_POST['num1']);
         $valorInputNum2 = htmlspecialchars($_POST['num2']);
         $valorInputNum3 = htmlspecialchars($_POST['num3']);
-        $valorInputNum4 = htmlspecialchars($_POST['num4']);
-        $valorInputNum5 = htmlspecialchars($_POST['num5']);
-        $total = ($valorInputNum1 + $valorInputNum2 + $valorInputNum3 + $valorInputNum4 + $valorInputNum5) / 5;
-
-        if ($total >= 9.5) {
-            echo "El alumno " . $valorInputName . " esta aprobado con promedio EXCELENTE de: " . $total;
+        
+        if ($valorInputNum1 < $valorInputNum2 && $valorInputNum1 < $valorInputNum3) {
+            echo "El numero: ".$valorInputNum1." es menor";
             exit;
-        } elseif ($total >= 8.4 && $total <= 9.4) {
-            echo "El alumno " . $valorInputName . " esta aprobado con promedio MUY BIEN de: " . $total;
-            exit;
-        } elseif ($total >= 7.5 && $total <= 8.3) {
-            echo "El alumno " . $valorInputName . " esta aprobado con promedio BIEN de: " . $total;
+        }elseif($valorInputNum2<$valorInputNum1 && $valorInputNum2 < $valorInputNum3) {
+            echo "El numero: ".$valorInputNum2." es menor";
             exit;
 
-        } else {
-            echo "El alumno " . $valorInputName . " esta Reprobado con promedio REGULAR de: " . $total;
+        }else{
+            echo "El numero: ".$valorInputNum3." es menor";
             exit;
+
         }
     }
 
@@ -78,74 +72,39 @@
                 <div class="container-fluid pr-5"> <!--exercise-->
                     <div class="row">
                         <div class="col-12 p-0">
-                            <div class="p">Ejercicio 12: Se requiere un programa para que solicite el nombre del alumno
-                                y cinco calificaciones; con estos datos calcular el promedio. si el promedio se ubica en
-                                el rango de 9.5 - 10.0 imprimir "excelente", en caso contrario si el promedio se ubica
-                                en el rango de 8.4 - 9.4 imprimir "Muy bien", en caso contrario si el promedio se ubica
-                                en el rango de 7.5 - 8.4 imprimir "bien" en caso contrario si el promedio se ubica en el
-                                rango de 7.0 - 7.4 imprimir "regular"</div>
+                            <div class="p">Ejercicio 15: Imprima en pantalla cual de los tres numeros ingresado es el
+                                menor</div>
                         </div>
                     </div>
                     <div class="row mt-4 pr-5">
-                        <div class="col-6">
+                        <div class="col-4">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Nombre</span>
-                                </div>
-                                <input id="inputName" type="text" class="form-control" aria-label="Username"
-                                    aria-describedby="basic-addon1">
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Nota 1</span>
+                                    <span class="input-group-text" id="basic-addon1">Numero 1</span>
                                 </div>
                                 <input id="num1" type="number" class="form-control" aria-label="Username"
                                     aria-describedby="basic-addon1">
                             </div>
                         </div>
-
-                    </div>
-                    <div class="row pr-5">
-                        <div class="col-6">
+                        <div class="col-4">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Nota 2</span>
+                                    <span class="input-group-text" id="basic-addon1">Numero 2</span>
                                 </div>
                                 <input id="num2" type="number" class="form-control" aria-label="Username"
                                     aria-describedby="basic-addon1">
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Nota 3</span>
+                                    <span class="input-group-text" id="basic-addon1">Numero 3</span>
                                 </div>
                                 <input id="num3" type="number" class="form-control" aria-label="Username"
                                     aria-describedby="basic-addon1">
                             </div>
                         </div>
-                    </div>
-                    <div class="row pr-5">
-                        <div class="col-6">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Nota 4</span>
-                                </div>
-                                <input id="num4" type="number" class="form-control" aria-label="Username"
-                                    aria-describedby="basic-addon1">
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Nota 5</span>
-                                </div>
-                                <input id="num5" type="number" class="form-control" aria-label="Username"
-                                    aria-describedby="basic-addon1">
-                            </div>
-                        </div>
+
                     </div>
                     <div class="row mt-4 pr-5 justify-content-center">
                         <div class="col-4">
@@ -194,15 +153,12 @@
         $(document).ready(function () {
             // Cuando se haga clic en el botón
             $('#ajaxButton').click(function () {
-                var inputValueName = $('#inputName').val(); // Capturamos el valor del input
                 var inputValueNum1 = $('#num1').val(); // Capturamos el valor del input
                 var inputValueNum2 = $('#num2').val(); // Capturamos el valor del input
                 var inputValueNum3 = $('#num3').val(); // Capturamos el valor del input
-                var inputValueNum4 = $('#num4').val(); // Capturamos el valor del input
-                var inputValueNum5 = $('#num5').val(); // Capturamos el valor del input
 
                 // Verificamos si el campo está vacío
-                if (inputValueName === '' || inputValueNum1 === '' || inputValueNum2 === '' || inputValueNum3 === '' || inputValueNum4 === '' || inputValueNum5 === '') {
+                if (inputValueNum1 === '' || inputValueNum2 === '' || inputValueNum3 === '') {
                     alert('Por favor ingresa un valor.');
                     return;
                 }
@@ -212,12 +168,9 @@
                     url: '', // El archivo PHP actual (puedes poner la URL de otro archivo PHP si es necesario)
                     type: 'POST',
                     data: {
-                        name: inputValueName,
                         num1: inputValueNum1,
                         num2: inputValueNum2,
-                        num3: inputValueNum3,
-                        num4: inputValueNum4,
-                        num5: inputValueNum5
+                        num3: inputValueNum3
                     }, // Enviamos el valor del input como 'miInput'
                     success: function (response) {
                         // Cuando se recibe una respuesta, la mostramos
