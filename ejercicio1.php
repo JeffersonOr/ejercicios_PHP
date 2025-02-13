@@ -73,9 +73,6 @@
                         <div class="col-12 p-0">
                             <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 2</button>
                         </div>
-                        <div class="col-12 p-0">
-                            <button type="button" class="btn btn-dark btn-lg btn-block">Ejercicio 3</button>
-                        </div>
                     </div>
                 </div>
 
